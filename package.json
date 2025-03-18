@@ -1,0 +1,57 @@
+{
+  "name": "@absorblms/vercel-nextjs-toolkit",
+  "version": "1.4.1",
+  "author": "Contentful",
+  "license": "MIT",
+  "description": "Contentful helper SDK for Vercel platform app integration to enable live preview",
+  "source": "./lib/index.ts",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./app-router": {
+      "import": "./dist/app-router.js",
+      "require": "./dist/app-router.cjs",
+      "types": "./dist/app-router/index.d.ts"
+    },
+    "./pages-router": {
+      "import": "./dist/pages-router.js",
+      "require": "./dist/pages-router.cjs",
+      "types": "./dist/pages-router/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/contentful/vercel-nextjs-toolkit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/contentful/vercel-nextjs-toolkit/issues"
+  },
+  "scripts": {
+    "prepack": "npm run build",
+    "build": "tsc && vite build",
+    "test": "vitest"
+  },
+  "homepage": "https://github.com/contentful/vercel-nextjs-toolkit#readme",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/node": "^20.12.7",
+    "semantic-release": "^23.0.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-plugin-dts": "^3.9.0",
+    "vitest": "^1.5.0"
+  },
+  "peerDependencies": {
+    "next": "^14.2.2 || ^15.1.3"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com",
+    "access": "public"
+  }
+}
